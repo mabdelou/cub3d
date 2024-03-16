@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 
-CC = cc -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
-
+CC = gcc 
+LFLAGS = -lmlx -lX11 -lXext -lm -g3 -fsanitize=address
 RM = rm -f
 NAME = cub3D
 LIBFT = ./libft/libft.a
@@ -39,7 +39,7 @@ all:  $(NAME)
 
 $(NAME): $(FILES)
 	cd libft && make && cd ..
-	$(CC) $(FILES)  -o $(NAME) $(LIBFT)
+	$(CC) $(FILES) $(LFLAGS) -o $(NAME) $(LIBFT)
 	
 
 clean:

@@ -35,7 +35,7 @@ void	set_images(int a, int b, t_cub *cub)
 	if (!cub->east_wall)
 		ft_error("can't get img_east_wall data");
 	cub->minimap = mlx_xpm_file_to_image(cub->ptr,
-			"./Texture/minimap.xpm", &a, &b);
+			"./texture/minimap.xpm", &a, &b);
 }
 
 void	_mlx_init_2(t_cub *cub)
@@ -72,7 +72,7 @@ void	_mlx_init_1_norm(t_cub *cub, int a, int b)
 	if (!cub->img_empty)
 		ft_error("can't get img_empty data");
 	cub->img_player = mlx_xpm_file_to_image(cub->ptr,
-			"./Texture/player.xpm", &a, &b);
+			"./texture/player.xpm", &a, &b);
 	if (!cub->img_player)
 		ft_error("can't get img_player data");
 }
@@ -90,15 +90,15 @@ void	_mlx_init_1(t_cub *cub)
 	if (!cub->img_of_screen)
 		ft_error("can't make img_of_screen");
 	cub->img_wall = mlx_xpm_file_to_image(cub->ptr, \
-		"./Texture/wall.xpm", &a, &b);
+		"./texture/wall.xpm", &a, &b);
 	if (!cub->img_wall)
 		ft_error("can't get img_wall data");
 	cub->img_floor = mlx_xpm_file_to_image(cub->ptr, \
-			"./Texture/floor-texture.xpm", &a, &b);
+			"./texture/floor-texture.xpm", &a, &b);
 	if (!cub->img_floor)
 		ft_error("can't get img_floor data");
 	cub->img_empty = mlx_xpm_file_to_image(cub->ptr,
-			"./Texture/black.xpm", &a, &b);
+			"./texture/black.xpm", &a, &b);
 	_mlx_init_1_norm(cub, a, b);
 }
 

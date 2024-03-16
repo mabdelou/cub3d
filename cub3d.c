@@ -88,9 +88,9 @@ int	main(int argc, char **argv)
 	get_len_of_map(cub);
 	player_pos(cub, -1);
 	init_directions(cub);
-	mlx_hook(cub->win_cub3d, 2, 0L, key_press, cub);
-	mlx_hook(cub->win_cub3d, 6, 0L, mouse_mv, cub);
-	mlx_hook(cub->win_cub3d, 17, 0L, ft_close, cub);
+	mlx_hook(cub->win_cub3d, 2, 1L<<0, key_press, cub);
+	mlx_hook(cub->win_cub3d, 6, 1L<<6, mouse_mv, cub);
+	mlx_hook(cub->win_cub3d, 17, 1L<<17, ft_close, cub);
 	mlx_loop_hook(cub->ptr, update, cub);
 	mlx_loop(cub->ptr);
 	return (0);

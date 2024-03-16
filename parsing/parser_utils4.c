@@ -56,16 +56,18 @@ void	check_extension(char *map)
 
 void	free_list(t_map *head)
 {
-	t_map	*temp;
-
-	while (head)
-	{
-		temp = head;
-		free(temp->content);
-		free(temp);
-		temp = NULL;
-		head = head->next;
-	}
+	// t_map	*temp;
 	free(head);
-	head = NULL;
+	// while (head)
+	// {
+	// 	temp = head;
+	// 	if(temp->content)
+	// 	printf("%p\n",head);
+	// 	free(temp->content);
+	// 	free(temp);
+	// 	temp = NULL;
+	// 	head = head->next;
+	// }
+	// free(head);
+	// head = NULL;
 }

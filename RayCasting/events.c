@@ -22,24 +22,24 @@ int	ft_close(t_cub *cub)
 
 void	key_press_2(int keycode, t_cub *cub)
 {
-	if ((keycode == 13 || keycode == 126)
+	if ((keycode == Up || keycode == Up_arrow)
 		&& collisiont_ray_len(cub, cub->radien, 10))
 	{
 		cub->ppy += roundf(sin(cub->radien) * 40);
 		cub->ppx += roundf(cos(cub->radien) * 40);
 	}
-	if ((keycode == 1 || keycode == 125)
+	if ((keycode == Down || keycode == Down_arrow)
 		&& collisiont_ray_len(cub, cub->rev_radien, 10))
 	{
 		cub->ppy -= roundf(sin(cub->radien) * 40);
 		cub->ppx -= roundf(cos(cub->radien) * 40);
 	}
-	if (keycode == 2 && collisiont_ray_len(cub, (cub->radien + M_PI) / 2.0, 10))
+	if (keycode == Riht && collisiont_ray_len(cub, (cub->radien + M_PI) / 2.0, 10))
 	{
 		cub->ppy += roundf(sin(cub->radien + M_PI / 2) * 40);
 		cub->ppx += roundf(cos(cub->radien + M_PI / 2) * 40);
 	}
-	if (keycode == 0
+	if (keycode == Left
 		&& collisiont_ray_len(cub, (cub->rev_radien + M_PI) / 2.0, 10))
 	{
 		cub->ppy -= roundf(sin(cub->radien + M_PI / 2) * 40);
@@ -49,17 +49,18 @@ void	key_press_2(int keycode, t_cub *cub)
 
 int	key_press(int keycode, t_cub *cub)
 {
-	if (keycode == 124)
+	printf("%d\n",keycode);
+	if (keycode == Right_arrow)
 	{
 		cub->radien += 0.075;
 		cub->rev_radien += 0.075;
 	}
-	if (keycode == 123)
+	if (keycode == Left_arrow)
 	{
 		cub->radien -= 0.075;
 		cub->rev_radien -= 0.075;
 	}
-	if (keycode == 53)
+	if (keycode == Esc)
 		ft_close(cub);
 	key_press_2(keycode, cub);
 	return (0);

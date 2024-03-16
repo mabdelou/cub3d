@@ -11,8 +11,30 @@
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
-# define CUB3D_H
+	# define CUB3D_H
+	# define M_PI 3.14159265358979323846
 
+	#ifdef __linux__
+		# define Up				119
+		# define Down			115
+		# define Riht			100
+		# define Left			97
+		# define Up_arrow		65362
+		# define Down_arrow		65364
+		# define Right_arrow	65363
+		# define Left_arrow		65361
+		# define Esc			65307
+	#elif defined(__APPLE__) && defined(__MACH__)
+		# define Up				13
+		# define Down			1
+		# define Riht			2
+		# define Left			0
+		# define Up_arrow		126
+		# define Down_arrow		125
+		# define Right_arrow	124
+		# define Left_arrow		123
+		# define Esc			53
+	#endif
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
